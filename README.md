@@ -49,7 +49,7 @@ Now you can create and manipulate mocked data source returns, as well as view pe
 <br>
 
 # Creating a Mocked data source
-To create a mocked data source, simply create a class that extends the MockDataSource class and implement the real abstract class.
+To create a mocked data source, simply create a class that extends the [MockDataSource](lib/src/mock_data_source.dart) class and implement the real abstract class.
 
 ```dart
 /// The method that will be called when the data source is called.
