@@ -46,7 +46,11 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return AnalyticsApp(
+      // Pass true to activate the analytics mode.
       isActivateAnalytics: isAnalyticsMode,
+      // Pass the MaterialApp widget as a parameter to
+      // the materialApp parameter and add the navigatorObservers
+      // parameter to the MaterialApp widget.
       materialApp: (observer) => MaterialApp(
         /// Add the observer to the MaterialApp.
         navigatorObservers: [observer],
