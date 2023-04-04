@@ -2,18 +2,25 @@ import 'package:analytics_app/src/models/analytics_request.dart';
 import 'package:analytics_app/src/models/possible_answer.dart';
 
 abstract class MockDataSource {
-  static PossibleAnswer? selectedAnswer;
 
+  /// Last choice selected by user
+  static PossibleAnswer? _selectedAnswer;
+
+  /// History of requests made
   static List<AnalyticsRequest> historyRequests = [];
 
-  PossibleAnswer? get returnSelected => selectedAnswer;
+ /// Last choice selected by user
+  PossibleAnswer? get returnSelected => _selectedAnswer;
 
+  /// List of possible returns for the data source
   List<PossibleAnswer> get possibleAnswers;
 
+  /// List of MockDataSources instances ready
   static Map<String, MockDataSource> instancesReady = {};
 
+  /// Select an answer and save it in the static variable
   void selectAnswer(PossibleAnswer answer) {
-    selectedAnswer = answer;
+    _selectedAnswer = answer;
   }
 
   /// Current page route name
@@ -35,7 +42,7 @@ abstract class MockDataSource {
 
   /// Reset the selected answer
   void resetAnswer() {
-    selectedAnswer = null;
+    _selectedAnswer = null;
   }
 
   /// Register a request in the history
