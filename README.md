@@ -141,7 +141,13 @@ class MockLoginDataSource extends MockDataSource implements LoginDataSource {
 
 <div align="center">
 
-![Alt text](assets/manipulate_answer.gif )  ![Alt text](assets/history_requests.gif)
+### Manipulation answers
+!["Manipulate answer"](./assets/manipulate_answer.gif )  
+
+<br>
+
+### History requests
+ !["History request"](./assets/history_requests.gif)
 
 <br>
 <br>
@@ -152,7 +158,7 @@ Here's an example of how to create your dependency injections automatically swit
 
 Use the same condition you chose to activate the AnalyticsMode mode and decide which DataSource instance should be registered
 
-![Alt text](assets/inject_mock.png)
+![Injection condition](./assets/inject_mock.png)
 
 
 <br>
