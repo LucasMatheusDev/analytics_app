@@ -44,9 +44,19 @@ return AnalyticsApp(
 ```
 
 Now you can create and manipulate mocked data source returns, as well as view performance information and other relevant statistics for your application.
+
+<br>
+ 
+<div align="center">
+
+ ![Alt text](assets/analyze_app.gif)
  
 <br>
 <br>
+
+<div align="left">
+
+
 
 # Creating a Mocked data source
 To create a mocked data source, simply create a class that extends the [MockDataSource](lib/src/mock_data_source.dart) class and implement the real abstract class.
@@ -127,7 +137,11 @@ class MockLoginDataSource extends MockDataSource implements LoginDataSource {
 }
 
 ```
+<br>
 
+<div align="center">
+
+![Alt text](assets/manipulate_answer.gif )  ![Alt text](assets/history_requests.gif)
 
 <br>
 <br>
