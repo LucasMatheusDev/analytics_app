@@ -138,7 +138,7 @@ Here's an example of how to create your dependency injections automatically swit
 
 Use the same condition you chose to activate the AnalyticsMode mode and decide which DataSource instance should be registered
 
-![Alt text](inject_mock.png)
+![Alt text](assets/inject_mock.png)
 
 
 <br>
