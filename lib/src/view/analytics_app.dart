@@ -4,16 +4,20 @@ import 'package:flutter/material.dart';
 
 class AnalyticsApp extends StatelessWidget {
   final bool isActivateAnalytics;
+  final bool isActiveAnalyticsError;
   final Widget Function(NavigatorObserver observer) materialApp;
   const AnalyticsApp({
     super.key,
     required this.materialApp,
     this.isActivateAnalytics = false,
+    this.isActiveAnalyticsError = false,
   });
 
   @override
   Widget build(BuildContext context) {
-    final AnalyticsAppManager analyticsApp = AnalyticsAppManager();
+    final AnalyticsAppManager analyticsApp = AnalyticsAppManager(
+      isAnalyticsFlutterError: isActiveAnalyticsError,
+    );
     if (!isActivateAnalytics) {
       return materialApp(analyticsApp.navigatorObserver);
     } else {

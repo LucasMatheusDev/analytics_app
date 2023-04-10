@@ -2,6 +2,7 @@ import 'package:analytics_app/src/analytics_app_manager.dart';
 import 'package:analytics_app/src/mock_data_source.dart';
 import 'package:analytics_app/src/view/widgets/custom_analytics_dialog.dart';
 import 'package:analytics_app/src/view/widgets/custom_answer_dialog.dart';
+import 'package:analytics_app/src/view/widgets/history_errors.dart';
 import 'package:analytics_app/src/view/widgets/history_request_page.dart';
 import 'package:flutter/material.dart';
 
@@ -96,6 +97,22 @@ class FloatingAnalyticsOptions extends StatelessWidget {
                                 (context, animation, secondaryAnimation) =>
                                     AnalyticsRequestPage(
                               requests: MockDataSource.historyRequests,
+                            ),
+                          ),
+                        );
+                      },
+                    ),
+                    IconButton(
+                      icon: const Icon(Icons.bug_report),
+                      padding: const EdgeInsets.all(0),
+                      onPressed: () {
+                        onSelectedOption?.call();
+                        Navigator.push(
+                          analyticsApp.currentContext!,
+                          PageRouteBuilder(
+                            pageBuilder: (__, _, ___) => HistoryErrors(
+                              analyticsFlutterError:
+                                  analyticsApp.analyticsFlutterError,
                             ),
                           ),
                         );
