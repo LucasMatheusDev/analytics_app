@@ -1,4 +1,3 @@
-
 class AnalyticsRequest {
   final String request;
   final String response;

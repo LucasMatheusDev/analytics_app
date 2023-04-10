@@ -2,14 +2,13 @@ import 'package:analytics_app/src/models/analytics_request.dart';
 import 'package:analytics_app/src/models/possible_answer.dart';
 
 abstract class MockDataSource {
-
   /// Last choice selected by user
   static PossibleAnswer? _selectedAnswer;
 
   /// History of requests made
   static List<AnalyticsRequest> historyRequests = [];
 
- /// Last choice selected by user
+  /// Last choice selected by user
   PossibleAnswer? get returnSelected => _selectedAnswer;
 
   /// List of possible returns for the data source
