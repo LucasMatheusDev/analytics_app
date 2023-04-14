@@ -16,7 +16,7 @@ To use the package in your Flutter project, simply add the dependency to your pu
 
 ```yaml
 dependencies:
-  analytics_app: ^0.1.0
+  analytics_app: ^0.2.0
 ```
 
 
