@@ -19,35 +19,37 @@ class AnalyzeOptionsWidget extends StatelessWidget {
           hasContext && !isVisibilityFloatingOptions.value;
     }
 
-    return Column(
-      children: [
-        Align(
-          alignment: Alignment.topCenter,
-          child: FloatingActionButton(
-            heroTag: DateTime.now().toString(),
-            backgroundColor: Theme.of(context).primaryColor.withOpacity(0.5),
-            onPressed: updateIsEnableButton,
-            child: const Icon(Icons.arrow_drop_down_outlined, size: 40),
+    return SafeArea(
+      child: Column(
+        children: [
+          Align(
+            alignment: Alignment.topCenter,
+            child: FloatingActionButton(
+              heroTag: DateTime.now().toString(),
+              backgroundColor: Theme.of(context).primaryColor.withOpacity(0.5),
+              onPressed: updateIsEnableButton,
+              child: const Icon(Icons.arrow_drop_down_outlined, size: 40),
+            ),
           ),
-        ),
-        const Spacer(),
-        Align(
-          alignment: Alignment.centerRight,
-          child: ValueListenableBuilder(
-            valueListenable: isVisibilityFloatingOptions,
-            builder: (context, value, child) => Visibility(
-              visible: value,
-              child: FloatingAnalyticsOptions(
-                analyticsApp: analyticsApp,
-                onSelectedOption: () {
-                  updateIsEnableButton();
-                },
+          const Spacer(),
+          Align(
+            alignment: Alignment.centerRight,
+            child: ValueListenableBuilder(
+              valueListenable: isVisibilityFloatingOptions,
+              builder: (context, value, child) => Visibility(
+                visible: value,
+                child: FloatingAnalyticsOptions(
+                  analyticsApp: analyticsApp,
+                  onSelectedOption: () {
+                    updateIsEnableButton();
+                  },
+                ),
               ),
             ),
           ),
-        ),
-        const Spacer(),
-      ],
+          const Spacer(),
+        ],
+      ),
     );
   }
 }
